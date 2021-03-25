@@ -3,8 +3,10 @@ import Router from 'vue-router'
 import login from '../views/commom/login'
 import userIndex from '../views/users/index'
 import personalSource from '../views/users/personalSource'
-import makeComplaint from '../views/users/makeComplaint'
 import myComplaint from '../views/users/myComplaint'
+import makeComplaintOne from '../views/users/makeComplaintOne'
+import makeComplaintTwo from '../views/users/makeComplaintTwo'
+import makeComplaintThree from '../views/users/makeComplaintThree'
 Vue.use(Router)
 
 let routes = [
@@ -34,9 +36,19 @@ let routes = [
         component: myComplaint
       },
       {
-        path: '/usersIndex/makeComplaint',
-        name: makeComplaint,
-        component: makeComplaint
+        path: '/usersIndex/makeComplaintOne',
+        name: makeComplaintOne,
+        component: makeComplaintOne
+      },
+      {
+        path: '/usersIndex/makeComplaintTwo',
+        name: makeComplaintTwo,
+        component: makeComplaintTwo
+      },
+      {
+        path: '/usersIndex/makeComplaintOne',
+        name: makeComplaintThree,
+        component: makeComplaintThree
       },
     ]
   }
