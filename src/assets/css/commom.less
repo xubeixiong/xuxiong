@@ -1,0 +1,19 @@
+input,textarea,button{
+    outline: none;
+}
+.comborder{
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 0px rgba(1, 86, 130, 0.22);
+}
+// 多个文字处理
+.wordsEllipsis(@line){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .left-aside{
+    display: none;
+  }
+}
