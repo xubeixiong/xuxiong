@@ -9,7 +9,9 @@
           <div class="head-pic-box">
             <img src="@/assets/img/users/head-pic.png" alt="" />
           </div>
-          <div class="menu-item-list">
+
+          <!-- 用户 -->
+          <div class="menu-item-list" v-if="type == 1">
             <span
               @click="tabMenunList(0, '/usersIndex/personalSource')"
               :class="tabMeunIndex == 0 ? 'item-active' : ''"
@@ -26,6 +28,19 @@
               >我要投诉</span
             >
           </div>
+          <!-- 经销商 -->
+          <div class="menu-item-list" v-if="type == 2">
+            <span
+              @click="tabMenunList(0, '/agentsIndex/personalSource')"
+              :class="tabMeunIndex == 0 ? 'item-active' : ''"
+              >个人资料</span
+            >
+            <span
+              @click="tabMenunList(1, '/agentsIndex/uploadPersonalSource')"
+              :class="tabMeunIndex == 1 ? 'item-active' : ''"
+              >上传资料</span
+            >
+          </div>
         </div>
       </div>
       <div>
@@ -39,6 +54,7 @@ export default {
   data() {
     return {
       tabMeunIndex: 0,
+      type: 0,
     };
   },
   methods: {
@@ -46,6 +62,16 @@ export default {
       this.tabMeunIndex = index;
       this.$router.push(path);
     },
+  },
+  mounted() {
+    if (this.$route.path.includes("usersIndex")) {
+      this.type = 1;
+    } else if (this.$route.path.includes("agentsIndex")) {
+      this.type = 2;
+    } else {
+      this.type = 3;
+    }
+    console.log(this.type, "11");
   },
 };
 </script>  

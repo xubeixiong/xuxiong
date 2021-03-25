@@ -7,6 +7,8 @@ import myComplaint from '../views/users/myComplaint'
 import makeComplaintOne from '../views/users/makeComplaintOne'
 import makeComplaintTwo from '../views/users/makeComplaintTwo'
 import makeComplaintThree from '../views/users/makeComplaintThree'
+import agentsPersonalSource from '../views/agents/personalSource'
+import uploadPersonalSource from '../views/agents/uploadSource'
 Vue.use(Router)
 
 let routes = [
@@ -21,10 +23,11 @@ let routes = [
     redirect: '/login'
   },
   {
-    path:'/usersIndex',
-    name:userIndex,
-    component:userIndex,
-    children:[
+    path: '/usersIndex',
+    name: userIndex,
+    component: userIndex,
+    children: [
+      // 用户
       {
         path: '/usersIndex/personalSource',
         name: personalSource,
@@ -50,11 +53,23 @@ let routes = [
         name: makeComplaintThree,
         component: makeComplaintThree
       },
+
+      // 经销商
+      {
+        path: '/agentsIndex/personalSource',
+        name: agentsPersonalSource,
+        component: agentsPersonalSource
+      },
+      {
+        path: '/agentsIndex/uploadPersonalSource',
+        name: uploadPersonalSource,
+        component: uploadPersonalSource
+      },
     ]
   }
 ]
 // 创建路由对象
 const mRouter = new Router({
   routes
-}, )
+})
 export default mRouter

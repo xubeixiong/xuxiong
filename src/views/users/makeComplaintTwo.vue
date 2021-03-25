@@ -26,6 +26,27 @@
               <Radio label="female">新能源车</Radio>
             </RadioGroup>
           </FormItem>
+           <FormItem label="投诉品牌:">
+            <Select>
+                <Option value="beijing">New York</Option>
+                <Option value="shanghai">London</Option>
+                <Option value="shenzhen">Sydney</Option>
+            </Select>
+         </FormItem>
+             <FormItem label="投诉车系:">
+            <Select>
+                <Option value="beijing">New York</Option>
+                <Option value="shanghai">London</Option>
+                <Option value="shenzhen">Sydney</Option>
+            </Select>
+         </FormItem>
+             <FormItem label="投诉车型:">
+            <Select>
+                <Option value="beijing">New York</Option>
+                <Option value="shanghai">London</Option>
+                <Option value="shenzhen">Sydney</Option>
+            </Select>
+         </FormItem>
           <FormItem label="质量投诉部位(多选):" prop="interest">
             <CheckboxGroup v-model="formValidate.interest">
               <Checkbox label="车身"></Checkbox>
@@ -34,6 +55,12 @@
               <Checkbox label="离合器" v-for="(i, j) in 6" :key="j"></Checkbox>
             </CheckboxGroup>
           </FormItem>
+           <FormItem label="车架号">
+            <Input placeholder="Enter something..."></Input>
+           </FormItem>
+           <FormItem label="车牌号">
+            <Input placeholder="Enter something..."></Input>
+           </FormItem>
           <FormItem label="故障描述:" prop="desc">
             <Input
               v-model="formValidate.desc"
